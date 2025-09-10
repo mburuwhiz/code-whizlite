@@ -1,0 +1,20 @@
+{
+  "name": "whizlite-pairing-code-final",
+  "version": "5.0.0",
+  "description": "A modern, single-page web app to generate WhatsApp Session IDs using Baileys Pairing Code.",
+  "main": "server.js",
+  "author": "WHIZ MBURU",
+  "license": "ISC",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.5.0",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "fs-extra": "^11.1.1",
+    "libphonenumber-js": "^1.10.51",
+    "pino": "^8.1.0",
+    "socket.io": "^4.7.5"
+  }
+}

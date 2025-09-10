@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhizLite | Get Pairing Code</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide-dev@latest"></script>
+
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <main class="glowing-box">
+        
+        <div class="state-container">
+
+            <div id="initial-state" class="flex flex-col items-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="logo">
+                <h1 class="title">WhizLite Session</h1>
+                <p class="subtitle">Enter your number to get a secure pairing code.</p>
+                <form id="phone-form" class="w-full">
+                    <div class="input-container">
+                        <input type="tel" id="phone-number" placeholder="254712345678" required>
+                        <button type="submit" id="submit-button" class="submit-button">
+                            <span>Get Code</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="loading-state" class="hidden flex-col items-center">
+                <div class="spinner"></div>
+                <p id="loading-text" class="status-text"></p>
+            </div>
+
+            <div id="code-state" class="hidden flex-col items-center">
+                <p class="subtitle">Your Pairing Code:</p>
+                <p id="pairing-code" class="pairing-code-text">---- ----</p>
+                <p class="instruction-text">Enter this code in WhatsApp under <br><strong>Linked Devices > Link with phone number</strong>.</p>
+                <p id="timer-text" class="timer-text"></p>
+            </div>
+
+            <div id="final-state" class="hidden flex-col items-center">
+                <i id="final-icon" class="w-12 h-12 mb-4"></i>
+                <h2 id="final-title" class="title"></h2>
+                <p id="final-message" class="subtitle"></p>
+                <button id="final-button" class="final-button"></button>
+            </div>
+
+        </div>
+    </main>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/client.js"></script>
+</body>
+</html>

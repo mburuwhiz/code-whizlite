@@ -1,0 +1,174 @@
+/* ==================================================
+   PROJECT BLUEPRINT: WHIZLITE | Final Polished Styles (v5.3)
+   AUTHOR: WHIZ MBURU
+   ================================================== */
+
+/* --- Base Setup --- */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #111827; /* Dark Gray-Blue background */
+    font-family: 'Inter', sans-serif;
+    color: #f1f5f9;
+    /* Dark grid from original blueprint */
+    background-image:
+        linear-gradient(rgba(55, 65, 81, 0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(55, 65, 81, 0.4) 1px, transparent 1px);
+    background-size: 2rem 2rem;
+}
+
+/* --- Main Card: Glowing Box --- */
+.glowing-box {
+    width: 90%;
+    max-width: 400px;
+    padding: 2.5rem 2rem;
+    background-color: rgba(31, 41, 55, 0.8);
+    border-radius: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(107, 114, 128, 0.3);
+    box-shadow: 0 0 25px rgba(66, 99, 235, 0.4), 0 0 50px rgba(66, 99, 235, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.state-container {
+    min-height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Typography & Common Elements --- */
+.logo {
+    width: 4rem; /* 64px */
+    height: 4rem;
+    margin-bottom: 1rem;
+    filter: grayscale(1) brightness(3);
+}
+.title {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.subtitle {
+    color: #9ca3af;
+    margin-bottom: 1.5rem;
+    max-width: 300px;
+}
+.hidden {
+    display: none !important;
+}
+
+/* --- Input Container & Button (Polished) --- */
+.input-container {
+    display: flex;
+    width: 100%;
+}
+
+.input-container input {
+    flex-grow: 1;
+    border-radius: 0.8rem 0 0 0.8rem;
+    background: #1f2937;
+    box-shadow: inset 5px 5px 10px #111827, inset -5px -5px 10px #2b3a4e;
+    padding: 1rem;
+    border: none;
+    color: #f1f5f9;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.input-container input::placeholder {
+    color: #6b7280;
+}
+
+.input-container input:focus {
+    box-shadow: inset 5px 5px 10px #111827, inset -5px -5px 10px #2b3a4e, 0 0 15px rgba(66, 99, 235, 0.5);
+}
+
+.submit-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: #4263eb; /* Primary blue */
+    font-weight: 700;
+    color: white;
+    border: none;
+    border-radius: 0 0.8rem 0.8rem 0;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background: #364fc7;
+    box-shadow: 0 0 15px rgba(66, 99, 235, 0.7);
+}
+
+/* --- Loading State --- */
+.spinner {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 5px solid #374151;
+    border-top-color: #4263eb;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+.status-text {
+    margin-top: 1rem;
+    font-size: 1.125rem;
+    color: #9ca3af;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* --- Code Display State --- */
+.pairing-code-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.25rem;
+    margin: 1rem 0;
+    /* --- NEW: Style for click-to-copy --- */
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    user-select: none; /* Prevents accidental text selection */
+}
+.pairing-code-text:hover {
+    color: #74c0fc; /* Light blue highlight on hover */
+}
+/* --- END NEW --- */
+
+.instruction-text {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+.timer-text {
+    color: #6b7280;
+}
+
+/* --- Final State (Success/Error/Expired) --- */
+.final-button {
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 99px;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Color variations for the final button */
+.final-button.success { background-color: #4263eb; }
+.final-button.success:hover { background-color: #364fc7; }
+.final-button.error { background-color: #fa5252; }
+.final-button.error:hover { background-color: #e03131; }
